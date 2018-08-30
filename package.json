@@ -1,0 +1,16 @@
+{
+  "name": "myreact",
+  "version": "0.0.1",
+  "description": "react like",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "parcel ./index.html"
+  },
+  "author": "kjyu",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1"
+  }
+}
