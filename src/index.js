@@ -103,7 +103,7 @@ class App extends React.Component {
         return (
             <div className="App" style={{flex:1,font:12}}>
                 {/* <h1>{this.state.num}</h1> */}
-                <h1 onClick={()=>this.onClick()}>箭头函数{this.state.num}</h1>
+                <h1 onClick={()=>this.onClick()}>t箭头函数{this.state.num}</h1>
                 {/*<h1 onClick={this.onClick.bind(this)}>bind(){this.state.num}</h1>*/}
             </div>
         );
