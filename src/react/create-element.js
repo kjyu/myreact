@@ -1,5 +1,13 @@
 import Component from './component.js'
 
+var MRTagHandlers = {
+    tagCount: 1,
+    getReactTag: function() {
+        this.tagCount++;
+        return this.tagCount;
+    }
+}
+
 function createElement( tag, attrs, ...children ) {
 
     attrs = attrs || {};
@@ -14,7 +22,8 @@ function createElement( tag, attrs, ...children ) {
         tag,
         attrs,
         children: child,
-        key: attrs.key || null
+        key: attrs.key || null,
+        _nativeTag: MRTagHandlers.getReactTag()
     }
 }
 

@@ -53,7 +53,9 @@ function diffNode( dom, vnode ) {
     //
     if ( !dom || !isSameNodeType( dom, vnode ) ) {
         out = document.createElement( vnode.tag );
-
+        // set reactTag 
+        out.reactTag = vnode._nativeTag;
+        
         if ( dom ) {
             [ ...dom.childNodes ].map( out.appendChild );    // 将原来的子节点移到新节点下
 
@@ -202,6 +204,13 @@ export function renderComponent( component ) {
     let base;
 
     const renderer = component.render();
+
+    // 保存虚拟节点
+    if (typeof myreact !== 'undefined') {
+        if (myreact.globalNode === undefined) {
+            myreact.globalNode = renderer;
+        }
+    }
 
     if ( component.base && component.componentWillUpdate ) {
         component.componentWillUpdate();
