@@ -149,7 +149,21 @@ function diffChildren( dom, vchildren ) {
 
         }
     }
-
+	// 删除多余的节点
+	for(const key in keyed) {
+		if (keyed.hasOwnProperty(key)) {
+			const el = keyed[key];
+			if (el !=== undefined) {
+				dom.removeChild(el);
+			}
+		}
+	}
+	for (let idx in children) {
+	const el = children[idx];
+		if (el) {
+			dom.removeChild(el);
+		}
+}
 }
 
 function diffComponent( dom, vnode ) {
