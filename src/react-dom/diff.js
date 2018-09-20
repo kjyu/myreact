@@ -153,17 +153,18 @@ function diffChildren( dom, vchildren ) {
 	for(const key in keyed) {
 		if (keyed.hasOwnProperty(key)) {
 			const el = keyed[key];
-			if (el !=== undefined) {
+			if (el !== undefined) {
 				dom.removeChild(el);
 			}
 		}
-	}
+    }
+    // 删除多余的节点
 	for (let idx in children) {
-	const el = children[idx];
+	    const el = children[idx];
 		if (el) {
 			dom.removeChild(el);
 		}
-}
+    }
 }
 
 function diffComponent( dom, vnode ) {
