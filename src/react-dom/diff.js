@@ -257,7 +257,8 @@ function createComponent( component, props ) {
 		inst = new Component( props );
 		inst.constructor = component;
 		inst.render = function() {
-            return this.constructor( props );
+			// 这个地方props会被闭包影响所以使用
+            return this.constructor( this.props );
         }
 	}
 
