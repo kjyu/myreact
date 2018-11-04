@@ -53,8 +53,6 @@ function diffNode( dom, vnode ) {
     //
     if ( !dom || !isSameNodeType( dom, vnode ) ) {
         out = document.createElement( vnode.tag );
-        // set reactTag 
-        out.reactTag = vnode._nativeTag;
         
         if ( dom ) {
             [ ...dom.childNodes ].map( out.appendChild );    // 将原来的子节点移到新节点下
